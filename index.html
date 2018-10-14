@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Farming game</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    </head>
+    <body>
+        
+    <header> <input type="text" placeholder="My farm (Click to edit name)">  <br><button id="menu">🏠<!--change--></button><span id="wallet">Wallet: 💵100</span> <button id="inventory">🏢Inventory</button><button id="shop">🎪Shop</button></header><br><br>
+       <table id="gamearea" class="fields">
+           
+       </table>
+       
+       <ul class="menuitem">
+       <button id="close" class="close">X</button><br><br>
+           <li id="help" onclick="openMenu('#helpmenu')">Help</li>
+           <li id="croplist" onclick="openMenu('#cropmenu')">Crops</li>
+           <li id="credits" onclick="openMenu('#creditsmenu')">Credits</li>
+           <li id="log" onclick="openMenu('#logmenu')">Change-log</li>
+       </ul>
+       <article id="helpmenu">
+         <button class="close" onclick="javascript:void($(this).parent().toggle(400))">X</button>
+       <h1>Help</h1>
+           <p>Welcome to the farming game created by Seniru. The objective is simple. You have to grow and sell crops to be rich, than any of others!</p>
+           <p>First, select the Plot button in the bottom-right corner to plot some fields. Then open the shop on the top to select crops. Then you can plant some crops on the plotted fields.
+       </p>
+       <p>
+           After some times your plants will be ready, then you can gather them by clicking on them. If you want to sell those crops open inventory and sell them on your desire.
+       </p>
+       <p>Good luck!</p>
+       </article>
+        <article id="creditsmenu">
+         <button class="close" onclick="javascript:void($(this).parent().toggle(400))">X</button>
+       <h1>Credits</h1>
+           <h3>Icons</h3> 
+           <p>IconArchive.com</p>
+           <h3>Images</h3>
+           <p>Wallpaper-house.com</p>
+           <h3>Testing</h3>
+           <p>Dr.Indika Niroshani Kaldera (MOM!!!)</p>
+           <hr>
+           <p>And special thanks for sololearn, MDN, stackoverflow, w3Schools for guidance!</p>
+       </article>
+       <article id="logmenu">
+         <button class="close" onclick="javascript:void($(this).parent().toggle(400))">X</button>
+         
+       <h1>Change-log</h1>
+     <em>10.08.2018</em><br>
+      <p>Released Farming game (Beta) v1.0</p><hr><em>20.08.2018 Farming game (Beta) v1.1</em><br><p>Added new crop chillies</p>
+       <p>Changed properties of crops</p><hr>
+       <em>21.08.2018 Farming game (Beta) v1.1</em><br>
+       <p>Bug fixes: Close button is not working in inventory after selling</p>
+       <p>Fields are not overlapping field rows in any device from now</p><hr>
+       <em>13.09.2018 Farming game (Beta) v1.1</em><br><p>Improvements</p><hr>
+       <em>09.09.2018 Farming game (Beta) v1.2</em><br>
+       <p>Added decorations</p>
+       <p>Minor updates</p>
+       </article>
+       <article id="cropmenu">
+         <button class="close" onclick="javascript:void($(this).parent().toggle(400))">X</button>
+       <h1>Crops</h1>
+       
+  
+       </article>
+        <div id="shadow"><button id="plot">PLOT</button></div>
+<button class="doneBtn"></button>
+    </body>
+</html>
