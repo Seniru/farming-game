@@ -1,0 +1,232 @@
+  body {
+    margin:0px;
+    background-image:url("https://wallpaper-house.com/data/out/10/wallpaper2you_378776.jpg");
+}
+.normalview {
+    border:1px solid rgba(226,226,226,0);
+    padding:0px;
+    margin:0px;
+    max-height:33px !important;
+    width:33px;
+    height:33px !important;
+    display:inline-block ;
+overflow:hidden;    
+}
+button {
+    background-color:rgb(10,140,10);
+    color:white;
+    border:0px;
+    border-bottom:2px solid black;
+    border-right:2px solid black;
+    margin:1px;
+    
+}
+.gridview {
+    border:1px solid rgba(40,100,250,0.8);
+    padding:0px;
+    margin:0px;
+    max-height:33px !important;
+    width:33px;
+    height:33px !important;
+    display:inline-block ;
+    overflow:hidden;
+}
+input {
+    width: 100%;
+    background-color:rgba(0,0,0,0);
+    text-align:center;
+    outline:none;
+    font-weight:bold;
+    border:0px;
+}
+header {
+    text-align:center;
+    background-color: rgb(30,180,50);
+    padding:3px;
+    
+}
+#plot {
+  width: 100%;  
+  height: 70px;
+  text-align:center ;
+  border-radius:30%;
+  border:none;
+  background-color:rgb(220,20,80);
+  color: white;
+  font-weight:bold;
+  z-index:200;
+  top: -6px;
+  position:relative;
+  outline:none;
+}
+body > #shadow {
+    width: 70px;  
+  height: 70px;
+  border-radius:30%;
+  border:none;
+  background-color:rgba(20,20,20,0.3);
+  z-index:199;
+  bottom: 50px;
+  right:50px;
+  position:fixed;
+}
+#plot:active {
+    top:0px;
+}
+.field {
+    top:0px !important;
+    width: 33px;
+    height:33px;
+    border-radius:10%;
+    background-color:#770000;
+    z-index:  10;
+    display:inline-block ;
+    position:relative;
+    border:1px solid black;
+    font-size:8px;
+    padding:0px;
+    margin:0px;
+}
+#gamearea {
+   width:100%; 
+   height:500px;
+   
+   z-index:-10;
+   position:fixed;
+   display:block;
+}
+.inventory {
+    display:none;
+    top: 50px;
+    left:30px;
+    width:80%;
+    height: 400px;
+    background-color:rgba(30,200,10,0.9);
+    position:fixed;
+    text-align:center;
+    border-radius:4%;
+    border:2px solid green;
+    overflow:scroll;
+     
+}
+.shop {
+    display:none;
+    top: 50px;
+    left:30px;
+    width:80%;
+    height: 400px;
+    background-color:rgba(30,200,10,0.9);
+    position:fixed;
+    text-align:left;
+    border-radius:4%;
+    border:2px solid green;
+    overflow:scroll;
+}
+.doneBtn {
+    display:block;
+    text-align:center;
+    left:-200px;
+    bottom: 30px;
+    width:128px;
+    height:128px;
+    
+    background-image:url("http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/sign-check-icon.png");
+    background-repeat:no-repeat;
+    position:fixed;
+    color:white;
+    z-index:50;
+    border:0px;
+    outline:none;
+    background-color:rgba(225,225,225,0);
+}
+.doneBtn:active {
+    width:120px;
+    height:123px;
+    outline:none;
+}
+.fields {
+    top:65px;
+}
+h1 {text-align:center;}
+#menu{
+    z-index:68;
+    top:-20px;
+    left:10px;
+    position:relative;
+    float:left;
+    width:40px;
+    height:40px;
+    border:0px;
+    font-size:20px;
+    text-align:center;
+    border-radius:50%;
+    outline:none;
+}
+#menu:active {
+    top:-17px;
+    background-color:rgb(10,100,10);
+    outline:none;
+}
+ul {
+    z-index:200;
+    position:fixed;
+    top:-10px;
+    left:-400px;
+    background-color:rgba(10,110,10,0.7);
+    width:100%;
+    height:100%;
+    display:none;
+}
+
+li {
+    list-style-type:none;
+    position:relative;
+    background-color:rgba(10,100,10,0.7);
+    width:100%;
+    margin:3px;
+    font-size:20px;
+    font-weight:bold;
+    color:white;
+    height:25px;
+    
+}
+li:hover {
+  background-color:rgba(10,100,10,1); 
+}
+.close {
+float:right;
+    right:20px;
+    background-color:red;
+    
+    z-index:900;
+}
+article {
+    display:none;
+    top: 50px;
+    left:30px;
+   width:80%;
+    height: 400px;
+    background-color:rgba(30,200,10,0.9);
+    position:fixed;
+    text-align:center;
+    border-radius:4%;
+    border:2px solid green;
+    overflow:scroll;
+    z-index:300;
+}
+#cropmenu > h4 , #cropmenu > p {
+    float:left;
+    display:inline;
+}
+em {float:left; font-weight:bold;}
+.tab {
+    border: 0px;
+    height:20px;
+    background-color:rgb(100,100,100);
+    font-size:15px;
+    outline:none;
+}
+.tab:hover {
+      background-color:rgb(80,80,80);
+      outline:none;
+}
