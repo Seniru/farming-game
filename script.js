@@ -11,6 +11,7 @@ var dict = {};
 var inventory = {};//fig name amount id
 var inventoryOpened = false;
 var shopOpened = false;
+var selectionsOn = false;
 function animal(n,fig,size,price,products) {
     
     animalNo += 1;
@@ -101,10 +102,14 @@ $("#cropmenu").append("<h4>"+crops[ci].fig+""+crops[ci].n+"</h4><br><Price: 💵
    });
   
     $("#plot").click(function(){
-    selectionMode = "plotting";
+    
+    //real plot function
+   /* selectionMode = "plotting";
     $("td").addClass("gridview");
     $("article>table").addClass("cLT");
-   $(".doneBtn").animate({left:"20px",bottom:"30px"}); 
+   $(".doneBtn").animate({left:"20px",bottom:"30px"}); */
+      (!selectionsOn)?$("#selections").animate({width:"210px",height:"210px",bottom:"-35px",right:"-35px"}):$("#selections").animate({width:"100px",height:"100px",bottom:"20px",right:"20px"});
+      selectionsOn = !selectionsOn
     });
 
     $("#inventory").click(function(){
@@ -135,7 +140,14 @@ $("#cropmenu").append("<h4>"+crops[ci].fig+""+crops[ci].n+"</h4><br><Price: 💵
   $("ul").animate({left:"-400px"},400);
   $("ul").toggle(400);
   });
-
+    $("td").click(function(event){
+    //console.log(crops[parseInt(dict[$("#"+event.target.id).attr("type")])].fig+ $("#"+event.target.id).attr("time")); 
+    //console.log();
+    try {
+    
+        $("#plot").html((parseInt(crops[dict[$("#"+event.target.id).attr("type")]].growTime)-parseInt($("#"+event.target.id).attr("time")))/1000 +" seconds left..."); 
+        }catch(e) {};
+    });
   
 });
 
@@ -143,12 +155,12 @@ $("#cropmenu").append("<h4>"+crops[ci].fig+""+crops[ci].n+"</h4><br><Price: 💵
 function farm(event) {
 try {
     if ($("#"+event.target.id).html() == "" && selectionMode.substring(0,1) != "none" && wallet-crops[dict[selectionMode]].price>=0) {
-          grow(event.target.id,crops[parseInt(dict[selectionMode])]);
+       grow(event.target.id,crops[parseInt(dict[selectionMode])]);
    wallet -= crops[dict[selectionMode]].price;
         $("#wallet").html("Wallet: 💵"+wallet);
     } else if($("#"+event.target.id).html() != "🌱🌱🌱🌱🌱🌱" && $("#"+event.target.id).html() != "") {
- 
-   
+     
+      $("#"+field).attr("time",0);
      
      inventory[crops[dict[$("#"+event.target.id).html().substring(4,6)]].id][2] += parseInt(crops[dict[$("#"+event.target.id).html().substring(4,6)]].cropNum);
      
@@ -159,10 +171,25 @@ try {
     }
 }
 function grow(field,plant) {
+     $("#"+field).attr("time",0);
+     $("#"+field).attr("type",plant.n);
+     
+     var time = 0;
  $("#"+event.target.id).html("🌱🌱🌱🌱🌱🌱");
     setTimeout(function(){
     $("#"+field).html(plant.fig+plant.fig+plant.fig+plant.fig+plant.fig+plant.fig);
-    },plant.growTime);}
+    
+   clearInterval(timing);
+ 
+    },plant.growTime);
+    let timing = setInterval(function(){
+        time += 1000;
+        
+        $("#"+field).attr("time",time);
+      
+    },1000);
+    
+    }
 function sell(product,n)  {
 if(inventory[crops[dict[product]].id][2]>0){
    wallet += crops[dict[product]].sellPrice;
@@ -214,3 +241,7 @@ function selectDecors() {
      $(".doneBtn").animate({left:"20px",bottom:"30px"});
      
 }
+    
+
+
+    
